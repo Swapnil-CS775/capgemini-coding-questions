@@ -37,5 +37,32 @@ public class Question5 {
                 break;
             }
         }
+        solve(A,B,C);
+        solve2(A,B,C);
+    }
+
+
+    public static void solve(int[] A,int[] B,int[] C){
+        int ans1=A[0];
+        for(int i=1;i<A.length;i++) ans1=ans1 ^ A[i];
+        for(int i=0;i<B.length;i++) ans1=ans1 ^ B[i];
+        int ans2=B[0];
+        for(int i=1;i<B.length;i++) ans2=ans2 ^ B[i];
+        for(int i=0;i<C.length;i++) ans2=ans2 ^ C[i];
+
+        System.out.println("X1 : "+ans1);
+        System.out.println("X2 : "+ans2);
+    }
+
+    public static void solve2(int[] A,int[] B,int[] C){
+        int ans1=A[0];
+        for(int i=1;i<A.length;i++) ans1=ans1 + A[i];
+        for(int i=0;i<B.length;i++) ans1=ans1 - B[i];
+        int ans2=B[0];
+        for(int i=1;i<B.length;i++) ans2=ans2 + B[i];
+        for(int i=0;i<C.length;i++) ans2=ans2 - C[i];
+
+        System.out.println("X1 : "+ans1);
+        System.out.println("X2 : "+ans2);
     }
 }
